@@ -1,7 +1,7 @@
 Package: fourierin
 Type: Package
 Title: Computes Numeric Fourier Integrals
-Version: 0.1.1
+Version: 0.1.2
 Date: 2016-05-18
 Author: Guillermo Basulto-Elias
 Maintainer: Guillermo Basulto-Elias <guillermobasulto@gmail.com>
@@ -16,6 +16,6 @@ URL: http://github.com/gbasulto/fourierin
 BugReports: https://github.com/gbasulto/fourierin/issues
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2016-05-19 17:46:01 UTC; guillermo
+Packaged: 2016-05-21 17:05:06 UTC; guillermo
 Repository: CRAN
-Date/Publication: 2016-05-19 20:02:07
+Date/Publication: 2016-05-22 09:20:54
