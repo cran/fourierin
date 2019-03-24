@@ -212,85 +212,85 @@ CF %>%
     theme(legend.position = "bottom")
 
 
-## ---- fig.height= 5, fig.width= 7----------------------------------------
-
-## Load packages
-library(fourierin)
-library(tidyr)
-library(dplyr)
-library(purrr)
-library(lattice)
-library(ggplot2)
-
-## Set functions to be tested with their corresponding parameters.
-mu <- c(-1, 1)
-sig <- matrix(c(3, -1, -1, 2), 2, 2)
-
-## Multivariate normal density, x is n x d
-f <- function(x) {
-    ## Auxiliar values
-    d <- ncol(x)
-    z <- sweep(x, 2, mu, "-")
-    ## Get numerator and denominator of normal density
-    num <- exp(-0.5*rowSums(z * (z %*% solve(sig))))
-    denom <- sqrt((2*pi)^d*det(sig))
-    return(num/denom)
-}
-
-## Characteristic function, s is n x d
-phi <- function (s) {
-    complex(modulus = exp(-0.5*rowSums(s*(s %*% sig))),
-            argument = s %*% mu)
-}
-
-## Evaluate characteristic function for a given resolution.
-eval <- fourierin(f,
-                  lower_int = c(-8, -6), upper_int = c(6, 8),
-                  lower_eval = c(-4, -4), upper_eval = c(4, 4),
-                  const_adj = 1, freq_adj = 1, resolution = 2*c(64, 64),
-                  use_fft = T)
-
-## --- Little test
-dat <- eval %>%
-    with(crossing(y = w2, x = w1) %>%
-         mutate(approximated = c(values))) %>%
-    mutate(true = phi(matrix(c(x, y), ncol = 2)),
-           difference = approximated - true) %>%
-    gather(value, z, -x, -y) %>%
-    mutate(real = Re(z), imaginary = Im(z)) %>%
-    select(-z) %>%
-    gather(part, z, -x, -y, -value)
-
-
-## Surface plot
-wireframe(z ~ x*y | value*part, data = dat,          
-          scales =
-              list(arrows=FALSE, cex= 0.45,
-                   col = "black", font = 3, tck = 1),
-          screen = list(z = 90, x = -74),
-          colorkey = FALSE,
-          shade=TRUE,
-          light.source= c(0,10,10),
-          shade.colors = function(irr, ref,
-                                  height, w = 0.4)
-              grey(w*irr + (1 - w)*(1 - (1 - ref)^0.4)),
-          aspect = c(1, 0.65))
-
-
-## Contours of values
-dat %>%
-    filter(value != "difference") %>%
-    ggplot(aes(x, y, z = z)) +
-    geom_tile(aes(fill = z)) +
-    facet_grid(part ~ value) +
-    scale_fill_distiller(palette = "Reds")
-
-## Contour of differences
-dat %>%
-    filter(value == "difference") %>%
-    ggplot(aes(x, y, z = z)) +
-    geom_tile(aes(fill = z)) +
-    facet_grid(part ~ value) +
-    scale_fill_distiller(palette = "Spectral")
-
+## ---- fig.height= 5, fig.width= 7, eval = FALSE--------------------------
+#  
+#  ## Load packages
+#  library(fourierin)
+#  library(tidyr)
+#  library(dplyr)
+#  library(purrr)
+#  library(lattice)
+#  library(ggplot2)
+#  
+#  ## Set functions to be tested with their corresponding parameters.
+#  mu <- c(-1, 1)
+#  sig <- matrix(c(3, -1, -1, 2), 2, 2)
+#  
+#  ## Multivariate normal density, x is n x d
+#  f <- function(x) {
+#      ## Auxiliar values
+#      d <- ncol(x)
+#      z <- sweep(x, 2, mu, "-")
+#      ## Get numerator and denominator of normal density
+#      num <- exp(-0.5*rowSums(z * (z %*% solve(sig))))
+#      denom <- sqrt((2*pi)^d*det(sig))
+#      return(num/denom)
+#  }
+#  
+#  ## Characteristic function, s is n x d
+#  phi <- function (s) {
+#      complex(modulus = exp(-0.5*rowSums(s*(s %*% sig))),
+#              argument = s %*% mu)
+#  }
+#  
+#  ## Evaluate characteristic function for a given resolution.
+#  eval <- fourierin(f,
+#                    lower_int = c(-8, -6), upper_int = c(6, 8),
+#                    lower_eval = c(-4, -4), upper_eval = c(4, 4),
+#                    const_adj = 1, freq_adj = 1, resolution = 2*c(64, 64),
+#                    use_fft = T)
+#  
+#  ## --- Little test
+#  dat <- eval %>%
+#      with(crossing(y = w2, x = w1) %>%
+#           mutate(approximated = c(values))) %>%
+#      mutate(true = phi(matrix(c(x, y), ncol = 2)),
+#             difference = approximated - true) %>%
+#      gather(value, z, -x, -y) %>%
+#      mutate(real = Re(z), imaginary = Im(z)) %>%
+#      select(-z) %>%
+#      gather(part, z, -x, -y, -value)
+#  
+#  
+#  ## Surface plot
+#  wireframe(z ~ x*y | value*part, data = dat,
+#            scales =
+#                list(arrows=FALSE, cex= 0.45,
+#                     col = "black", font = 3, tck = 1),
+#            screen = list(z = 90, x = -74),
+#            colorkey = FALSE,
+#            shade=TRUE,
+#            light.source= c(0,10,10),
+#            shade.colors = function(irr, ref,
+#                                    height, w = 0.4)
+#                grey(w*irr + (1 - w)*(1 - (1 - ref)^0.4)),
+#            aspect = c(1, 0.65))
+#  
+#  
+#  ## Contours of values
+#  dat %>%
+#      filter(value != "difference") %>%
+#      ggplot(aes(x, y, z = z)) +
+#      geom_tile(aes(fill = z)) +
+#      facet_grid(part ~ value) +
+#      scale_fill_distiller(palette = "Reds")
+#  
+#  ## Contour of differences
+#  dat %>%
+#      filter(value == "difference") %>%
+#      ggplot(aes(x, y, z = z)) +
+#      geom_tile(aes(fill = z)) +
+#      facet_grid(part ~ value) +
+#      scale_fill_distiller(palette = "Spectral")
+#  
 

@@ -11,7 +11,7 @@ using namespace Rcpp;
 
 // fourierin_1d_cpp
 arma::cx_vec fourierin_1d_cpp(const arma::vec& f, double a, double b, double c, double d, double r, double s);
-static SEXP fourierin_fourierin_1d_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
+static SEXP _fourierin_fourierin_1d_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const arma::vec& >::type f(fSEXP);
@@ -25,16 +25,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP fourierin_fourierin_1d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
+RcppExport SEXP _fourierin_fourierin_1d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(fourierin_fourierin_1d_cpp_try(fSEXP, aSEXP, bSEXP, cSEXP, dSEXP, rSEXP, sSEXP));
+        rcpp_result_gen = PROTECT(_fourierin_fourierin_1d_cpp_try(fSEXP, aSEXP, bSEXP, cSEXP, dSEXP, rSEXP, sSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -47,7 +51,7 @@ RcppExport SEXP fourierin_fourierin_1d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, S
 }
 // fourierin_1d_nonregular_cpp
 arma::cx_vec fourierin_1d_nonregular_cpp(const arma::vec& f, double a, double b, const arma::vec& w, int resolution, double r, double s);
-static SEXP fourierin_fourierin_1d_nonregular_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
+static SEXP _fourierin_fourierin_1d_nonregular_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const arma::vec& >::type f(fSEXP);
@@ -61,16 +65,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP fourierin_fourierin_1d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
+RcppExport SEXP _fourierin_fourierin_1d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(fourierin_fourierin_1d_nonregular_cpp_try(fSEXP, aSEXP, bSEXP, wSEXP, resolutionSEXP, rSEXP, sSEXP));
+        rcpp_result_gen = PROTECT(_fourierin_fourierin_1d_nonregular_cpp_try(fSEXP, aSEXP, bSEXP, wSEXP, resolutionSEXP, rSEXP, sSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -83,7 +91,7 @@ RcppExport SEXP fourierin_fourierin_1d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SE
 }
 // fourierin_2d_cpp
 arma::cx_mat fourierin_2d_cpp(const arma::mat& f, const arma::vec& a, const arma::vec& b, const arma::vec& c, const arma::vec& d, double r, double s);
-static SEXP fourierin_fourierin_2d_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
+static SEXP _fourierin_fourierin_2d_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const arma::mat& >::type f(fSEXP);
@@ -97,16 +105,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP fourierin_fourierin_2d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
+RcppExport SEXP _fourierin_fourierin_2d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(fourierin_fourierin_2d_cpp_try(fSEXP, aSEXP, bSEXP, cSEXP, dSEXP, rSEXP, sSEXP));
+        rcpp_result_gen = PROTECT(_fourierin_fourierin_2d_cpp_try(fSEXP, aSEXP, bSEXP, cSEXP, dSEXP, rSEXP, sSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -119,7 +131,7 @@ RcppExport SEXP fourierin_fourierin_2d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, S
 }
 // fourierin_2d_nonregular_cpp
 arma::cx_mat fourierin_2d_nonregular_cpp(const arma::mat& f, const arma::vec& a, const arma::vec& b, const arma::mat& w, const arma::vec& resolution, double r, double s);
-static SEXP fourierin_fourierin_2d_nonregular_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
+static SEXP _fourierin_fourierin_2d_nonregular_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const arma::mat& >::type f(fSEXP);
@@ -133,16 +145,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP fourierin_fourierin_2d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
+RcppExport SEXP _fourierin_fourierin_2d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(fourierin_fourierin_2d_nonregular_cpp_try(fSEXP, aSEXP, bSEXP, wSEXP, resolutionSEXP, rSEXP, sSEXP));
+        rcpp_result_gen = PROTECT(_fourierin_fourierin_2d_nonregular_cpp_try(fSEXP, aSEXP, bSEXP, wSEXP, resolutionSEXP, rSEXP, sSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -155,7 +171,7 @@ RcppExport SEXP fourierin_fourierin_2d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SE
 }
 // fourierin_cx_1d_cpp
 arma::cx_vec fourierin_cx_1d_cpp(const arma::cx_vec& f, double a, double b, double c, double d, double r, double s);
-static SEXP fourierin_fourierin_cx_1d_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
+static SEXP _fourierin_fourierin_cx_1d_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const arma::cx_vec& >::type f(fSEXP);
@@ -169,16 +185,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP fourierin_fourierin_cx_1d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
+RcppExport SEXP _fourierin_fourierin_cx_1d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(fourierin_fourierin_cx_1d_cpp_try(fSEXP, aSEXP, bSEXP, cSEXP, dSEXP, rSEXP, sSEXP));
+        rcpp_result_gen = PROTECT(_fourierin_fourierin_cx_1d_cpp_try(fSEXP, aSEXP, bSEXP, cSEXP, dSEXP, rSEXP, sSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -191,7 +211,7 @@ RcppExport SEXP fourierin_fourierin_cx_1d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP
 }
 // fourierin_cx_1d_nonregular_cpp
 arma::cx_vec fourierin_cx_1d_nonregular_cpp(const arma::cx_vec& f, double a, double b, const arma::vec& w, int resolution, double r, double s);
-static SEXP fourierin_fourierin_cx_1d_nonregular_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
+static SEXP _fourierin_fourierin_cx_1d_nonregular_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const arma::cx_vec& >::type f(fSEXP);
@@ -205,16 +225,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP fourierin_fourierin_cx_1d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
+RcppExport SEXP _fourierin_fourierin_cx_1d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(fourierin_fourierin_cx_1d_nonregular_cpp_try(fSEXP, aSEXP, bSEXP, wSEXP, resolutionSEXP, rSEXP, sSEXP));
+        rcpp_result_gen = PROTECT(_fourierin_fourierin_cx_1d_nonregular_cpp_try(fSEXP, aSEXP, bSEXP, wSEXP, resolutionSEXP, rSEXP, sSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -227,7 +251,7 @@ RcppExport SEXP fourierin_fourierin_cx_1d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP,
 }
 // fourierin_cx_2d_cpp
 arma::cx_mat fourierin_cx_2d_cpp(const arma::cx_mat& f, const arma::vec& a, const arma::vec& b, const arma::vec& c, const arma::vec& d, double r, double s);
-static SEXP fourierin_fourierin_cx_2d_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
+static SEXP _fourierin_fourierin_cx_2d_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const arma::cx_mat& >::type f(fSEXP);
@@ -241,16 +265,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP fourierin_fourierin_cx_2d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
+RcppExport SEXP _fourierin_fourierin_cx_2d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP dSEXP, SEXP rSEXP, SEXP sSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(fourierin_fourierin_cx_2d_cpp_try(fSEXP, aSEXP, bSEXP, cSEXP, dSEXP, rSEXP, sSEXP));
+        rcpp_result_gen = PROTECT(_fourierin_fourierin_cx_2d_cpp_try(fSEXP, aSEXP, bSEXP, cSEXP, dSEXP, rSEXP, sSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -263,7 +291,7 @@ RcppExport SEXP fourierin_fourierin_cx_2d_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP
 }
 // fourierin_cx_2d_nonregular_cpp
 arma::cx_mat fourierin_cx_2d_nonregular_cpp(const arma::cx_mat& f, const arma::vec& a, const arma::vec& b, const arma::mat& w, const arma::vec& resolution, double r, double s);
-static SEXP fourierin_fourierin_cx_2d_nonregular_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
+static SEXP _fourierin_fourierin_cx_2d_nonregular_cpp_try(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const arma::cx_mat& >::type f(fSEXP);
@@ -277,16 +305,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP fourierin_fourierin_cx_2d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
+RcppExport SEXP _fourierin_fourierin_cx_2d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP, SEXP bSEXP, SEXP wSEXP, SEXP resolutionSEXP, SEXP rSEXP, SEXP sSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(fourierin_fourierin_cx_2d_nonregular_cpp_try(fSEXP, aSEXP, bSEXP, wSEXP, resolutionSEXP, rSEXP, sSEXP));
+        rcpp_result_gen = PROTECT(_fourierin_fourierin_cx_2d_nonregular_cpp_try(fSEXP, aSEXP, bSEXP, wSEXP, resolutionSEXP, rSEXP, sSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -299,7 +331,7 @@ RcppExport SEXP fourierin_fourierin_cx_2d_nonregular_cpp(SEXP fSEXP, SEXP aSEXP,
 }
 
 // validate (ensure exported C++ functions exist before calling them)
-static int fourierin_RcppExport_validate(const char* sig) { 
+static int _fourierin_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
         signatures.insert("arma::cx_vec(*fourierin_1d_cpp)(const arma::vec&,double,double,double,double,double,double)");
@@ -315,15 +347,33 @@ static int fourierin_RcppExport_validate(const char* sig) {
 }
 
 // registerCCallable (register entry points for exported C++ functions)
-RcppExport SEXP fourierin_RcppExport_registerCCallable() { 
-    R_RegisterCCallable("fourierin", "fourierin_fourierin_1d_cpp", (DL_FUNC)fourierin_fourierin_1d_cpp_try);
-    R_RegisterCCallable("fourierin", "fourierin_fourierin_1d_nonregular_cpp", (DL_FUNC)fourierin_fourierin_1d_nonregular_cpp_try);
-    R_RegisterCCallable("fourierin", "fourierin_fourierin_2d_cpp", (DL_FUNC)fourierin_fourierin_2d_cpp_try);
-    R_RegisterCCallable("fourierin", "fourierin_fourierin_2d_nonregular_cpp", (DL_FUNC)fourierin_fourierin_2d_nonregular_cpp_try);
-    R_RegisterCCallable("fourierin", "fourierin_fourierin_cx_1d_cpp", (DL_FUNC)fourierin_fourierin_cx_1d_cpp_try);
-    R_RegisterCCallable("fourierin", "fourierin_fourierin_cx_1d_nonregular_cpp", (DL_FUNC)fourierin_fourierin_cx_1d_nonregular_cpp_try);
-    R_RegisterCCallable("fourierin", "fourierin_fourierin_cx_2d_cpp", (DL_FUNC)fourierin_fourierin_cx_2d_cpp_try);
-    R_RegisterCCallable("fourierin", "fourierin_fourierin_cx_2d_nonregular_cpp", (DL_FUNC)fourierin_fourierin_cx_2d_nonregular_cpp_try);
-    R_RegisterCCallable("fourierin", "fourierin_RcppExport_validate", (DL_FUNC)fourierin_RcppExport_validate);
+RcppExport SEXP _fourierin_RcppExport_registerCCallable() { 
+    R_RegisterCCallable("fourierin", "_fourierin_fourierin_1d_cpp", (DL_FUNC)_fourierin_fourierin_1d_cpp_try);
+    R_RegisterCCallable("fourierin", "_fourierin_fourierin_1d_nonregular_cpp", (DL_FUNC)_fourierin_fourierin_1d_nonregular_cpp_try);
+    R_RegisterCCallable("fourierin", "_fourierin_fourierin_2d_cpp", (DL_FUNC)_fourierin_fourierin_2d_cpp_try);
+    R_RegisterCCallable("fourierin", "_fourierin_fourierin_2d_nonregular_cpp", (DL_FUNC)_fourierin_fourierin_2d_nonregular_cpp_try);
+    R_RegisterCCallable("fourierin", "_fourierin_fourierin_cx_1d_cpp", (DL_FUNC)_fourierin_fourierin_cx_1d_cpp_try);
+    R_RegisterCCallable("fourierin", "_fourierin_fourierin_cx_1d_nonregular_cpp", (DL_FUNC)_fourierin_fourierin_cx_1d_nonregular_cpp_try);
+    R_RegisterCCallable("fourierin", "_fourierin_fourierin_cx_2d_cpp", (DL_FUNC)_fourierin_fourierin_cx_2d_cpp_try);
+    R_RegisterCCallable("fourierin", "_fourierin_fourierin_cx_2d_nonregular_cpp", (DL_FUNC)_fourierin_fourierin_cx_2d_nonregular_cpp_try);
+    R_RegisterCCallable("fourierin", "_fourierin_RcppExport_validate", (DL_FUNC)_fourierin_RcppExport_validate);
     return R_NilValue;
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_fourierin_fourierin_1d_cpp", (DL_FUNC) &_fourierin_fourierin_1d_cpp, 7},
+    {"_fourierin_fourierin_1d_nonregular_cpp", (DL_FUNC) &_fourierin_fourierin_1d_nonregular_cpp, 7},
+    {"_fourierin_fourierin_2d_cpp", (DL_FUNC) &_fourierin_fourierin_2d_cpp, 7},
+    {"_fourierin_fourierin_2d_nonregular_cpp", (DL_FUNC) &_fourierin_fourierin_2d_nonregular_cpp, 7},
+    {"_fourierin_fourierin_cx_1d_cpp", (DL_FUNC) &_fourierin_fourierin_cx_1d_cpp, 7},
+    {"_fourierin_fourierin_cx_1d_nonregular_cpp", (DL_FUNC) &_fourierin_fourierin_cx_1d_nonregular_cpp, 7},
+    {"_fourierin_fourierin_cx_2d_cpp", (DL_FUNC) &_fourierin_fourierin_cx_2d_cpp, 7},
+    {"_fourierin_fourierin_cx_2d_nonregular_cpp", (DL_FUNC) &_fourierin_fourierin_cx_2d_nonregular_cpp, 7},
+    {"_fourierin_RcppExport_registerCCallable", (DL_FUNC) &_fourierin_RcppExport_registerCCallable, 0},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_fourierin(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }
