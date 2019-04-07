@@ -1,11 +1,11 @@
 Package: fourierin
 Type: Package
 Title: Computes Numeric Fourier Integrals
-Version: 0.2.3
-Date: 2019-03-24
+Version: 0.2.4
+Date: 2019-04-01
 Author: Guillermo Basulto-Elias
 Maintainer: Guillermo Basulto-Elias <guillermobasulto@gmail.com>
-Description: Computes Fourier integrals of functions of one and two variables using the Fast Fourier transform. The Fourier transforms must be evaluated on a regular grid.
+Description: Computes Fourier integrals of functions of one and two variables using the Fast Fourier transform. The Fourier transforms must be evaluated on a regular grid for fast evaluation.
 License: MIT + file LICENSE
 LazyData: TRUE
 LinkingTo: RcppArmadillo, Rcpp
@@ -18,6 +18,6 @@ BugReports: https://github.com/gbasulto/fourierin/issues
 VignetteBuilder: knitr
 Encoding: UTF-8
 NeedsCompilation: yes
-Packaged: 2019-03-24 18:28:35 UTC; guillermo
+Packaged: 2019-04-04 20:19:50 UTC; guillermo
 Repository: CRAN
-Date/Publication: 2019-03-24 19:00:03 UTC
+Date/Publication: 2019-04-07 12:22:43 UTC
