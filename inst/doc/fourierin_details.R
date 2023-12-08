@@ -1,4 +1,4 @@
-## ---- fig.height= 5, fig.width= 7----------------------------------------
+## ----fig.height= 5, fig.width= 7----------------------------------------------
 
 library(fourierin)
 library(dplyr)
@@ -33,7 +33,7 @@ resolution %>%
     ylab("time (in milliseconds)")
 
 
-## ---- fig.height= 5, fig.width= 7----------------------------------------
+## ----fig.height= 5, fig.width= 7----------------------------------------------
 ## Load packages
 library(fourierin)
 library(dplyr)
@@ -86,7 +86,7 @@ comparison %>%
     ylab("time (in seconds)")
 
 
-## ---- fig.height= 5, fig.width= 7----------------------------------------
+## ----fig.height= 5, fig.width= 7----------------------------------------------
 library(fourierin)
 library(dplyr)
 library(ggplot2)
@@ -101,11 +101,11 @@ out <- fourierin(f = fnc, lower_int = -5, upper_int = 5,
 
 ## Extract values and compute true values of the density
 df1 <- out %>%
-    as_data_frame() %>%
+    as_tibble() %>%
     mutate(values = Re(values),
            density = "approximated")
 
-df2 <- data_frame(w = seq(min(df1$w), max(df1$w), len = 150),
+df2 <- tibble(w = seq(min(df1$w), max(df1$w), len = 150),
                   values = dnorm(w),
                   density = "true")
 
@@ -115,7 +115,7 @@ bind_rows(df1, df2) %>%
     xlab("x") + ylab("f(x)")
 
 
-## ---- fig.height= 5, fig.width= 7----------------------------------------
+## ----fig.height= 5, fig.width= 7----------------------------------------------
 
 library(fourierin)
 library(dplyr)
@@ -162,7 +162,7 @@ vals %>%
     geom_line(data = true, aes(color = "true values"))
 
 
-## ---- fig.height= 5, fig.width= 7----------------------------------------
+## ----fig.height= 5, fig.width= 7----------------------------------------------
 
 library(fourierin)
 library(tidyr)
@@ -212,7 +212,7 @@ CF %>%
     theme(legend.position = "bottom")
 
 
-## ---- fig.height= 5, fig.width= 7, eval = FALSE--------------------------
+## ----fig.height= 5, fig.width= 7, eval = FALSE--------------------------------
 #  
 #  ## Load packages
 #  library(fourierin)

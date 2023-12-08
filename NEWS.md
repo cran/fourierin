@@ -1,3 +1,6 @@
+# fourierin 0.2.5
+
+- Update Rcpp.
 
 # Version 0.2.4
 
